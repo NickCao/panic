@@ -16,10 +16,11 @@ package = "co.nichi.panic"
 apk_name = "panic"
 build_targets = [ "aarch64-linux-android" ]
 strip = "strip"
+assets = "assets"
 
 [package.metadata.android.application]
 label = "Panic"
-theme = "@android:style/Theme.NoDisplay"
+theme = "@android:style/Theme.Translucent.NoTitleBar"
 
 [package.metadata.android.sdk]
 target_sdk_version = 32
