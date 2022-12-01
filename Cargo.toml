@@ -1,0 +1,12 @@
+[package]
+name = "panic"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[target.'cfg(target_os = "android")'.dependencies]
+ndk-glue = "0.7.0"
+
+[lib]
+crate-type = [ "cdylib" ]
