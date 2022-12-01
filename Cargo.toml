@@ -14,7 +14,7 @@ crate-type = [ "cdylib" ]
 [package.metadata.android]
 package = "co.nichi.panic"
 apk_name = "panic"
-build_targets = [ "armv7-linux-androideabi", "aarch64-linux-android" ]
+build_targets = [ "aarch64-linux-android" ]
 strip = "strip"
 
 [package.metadata.android.application]

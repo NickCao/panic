@@ -27,9 +27,10 @@
           toolsVersion = "26.1.1";
           platformToolsVersion = "33.0.2";
           buildToolsVersions = [ "33.0.0" ];
-          includeNDK = true;
-          includeEmulator = false;
+          ndkVersion = "24.0.8215888";
           platformVersions = [ (toString metadata.sdk.target_sdk_version) ];
+          abiVersions = [ "arm64-v8a" ];
+          includeNDK = true;
         };
       in
       with pkgs; {
