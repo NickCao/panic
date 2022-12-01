@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs?ref=pull/203898/head";
+    nixpkgs.url = "github:NixOS/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
@@ -24,10 +24,6 @@
           targets = metadata.build_targets;
         };
         androidenv = pkgs.androidenv.composeAndroidPackages {
-          toolsVersion = "26.1.1";
-          platformToolsVersion = "33.0.2";
-          buildToolsVersions = [ "33.0.0" ];
-          ndkVersion = "24.0.8215888";
           platformVersions = [ (toString metadata.sdk.target_sdk_version) ];
           abiVersions = [ "arm64-v8a" ];
           includeNDK = true;
