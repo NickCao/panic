@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:NixOS/nixpkgs?ref=pull/203898/head";
     flake-utils.url = "github:numtide/flake-utils";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
@@ -34,7 +34,7 @@
       in
       with pkgs; {
         devShell = mkShell {
-          nativeBuildInputs = [ toolchain jre ];
+          nativeBuildInputs = [ toolchain jre cargo-apk ];
           ANDROID_HOME = "${androidenv.androidsdk}/libexec/android-sdk";
           ANDROID_NDK_ROOT = "${androidenv.androidsdk}/libexec/android-sdk/ndk-bundle";
         };

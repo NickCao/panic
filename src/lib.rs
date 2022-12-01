@@ -1,6 +1,10 @@
 #[cfg_attr(target_os = "android", ndk_glue::main(backtrace = "on"))]
 pub fn main() {
-    const PACKAGES: [&'static str; 1] = ["co.nichi.panic"];
+    const PACKAGES: Vec<&'static str> = vec![
+        "io.nekohasekai.sagernet",
+        "org.telegram.messenger.web",
+        "co.nichi.panic",
+    ];
     #[allow(unused_must_use)]
     for package in PACKAGES {
         std::process::Command::new("su")
