@@ -19,6 +19,7 @@ strip = "strip"
 
 [package.metadata.android.application]
 label = "Panic"
+theme = "@android:style/Theme.NoDisplay"
 
 [package.metadata.android.sdk]
 target_sdk_version = 32
