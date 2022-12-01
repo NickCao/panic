@@ -10,3 +10,11 @@ ndk-glue = "0.7.0"
 
 [lib]
 crate-type = [ "cdylib" ]
+
+[package.metadata.android]
+package = "co.nichi.panic"
+apk_name = "panic"
+build_targets = [ "armv7-linux-androideabi", "aarch64-linux-android" ]
+
+[package.metadata.android.application]
+label = "Panic"

@@ -20,7 +20,7 @@
           };
         };
         toolchain = pkgs.rust-bin.stable.latest.default.override {
-          targets = [ "aarch64-linux-android" ];
+          targets = (builtins.fromTOML (builtins.readFile ./Cargo.toml)).package.metadata.android.build_targets;
         };
         androidenv = pkgs.androidenv.composeAndroidPackages {
           toolsVersion = "26.1.1";
