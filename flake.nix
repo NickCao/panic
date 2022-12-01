@@ -19,17 +19,17 @@
             allowUnfree = true;
           };
         };
+        metadata = (builtins.fromTOML (builtins.readFile ./Cargo.toml)).package.metadata.android;
         toolchain = pkgs.rust-bin.stable.latest.default.override {
-          targets = (builtins.fromTOML (builtins.readFile ./Cargo.toml)).package.metadata.android.build_targets;
+          targets = metadata.build_targets;
         };
         androidenv = pkgs.androidenv.composeAndroidPackages {
           toolsVersion = "26.1.1";
           platformToolsVersion = "33.0.2";
           buildToolsVersions = [ "33.0.0" ];
-          includeEmulator = false;
           includeNDK = true;
-          emulatorVersion = "31.3.9";
-          platformVersions = [ "30" ];
+          includeEmulator = false;
+          platformVersions = [ (toString metadata.sdk.target_sdk_version) ];
         };
       in
       with pkgs; {
